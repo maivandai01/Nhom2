@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+        
+    <%- include('header') -%>
+    <div class="results-wrap">
+        <h3 class="mb-5">Thêm mới</h3>
+        <form method="POST" action="/store" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="tenTruong">Tên trường</label>
+              <input class="form-control" name="tenTruong" id="tenTruong">
+            </div>
+            <div class="form-group">
+                <label for="diemDanhGia">Điểm đánh giá</label>
+                <input class="form-control" name="diemDanhGia" id="diemDanhGia">
+            </div>
+            <div class="form-group">
+                <label for="topTruong">Top xếp hạng</label>
+                <input class="form-control" name="topTruong" id="topTruong">
+            </div>
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea class="form-control" name="content" id="content"></textarea>
+              </div>
+            <div class="form-group">
+                <label for="soLuongSV">Số lượng sinh viên</label>
+                <input class="form-control" name="soLuongSV" id="soLuongSV">
+            </div>
+            <div class="form-group">
+                <label for="desc">Mô tả</label>
+                <textarea class="form-control" name="desc" id="desc"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="diaChi">Địa chỉ</label>
+                <input class="form-control" name="diaChi" id="diaChi">
+            </div>
+            <div class="form-group">
+                <label for="soDT">Số điện thoại</label>
+                <input class="form-control" name="soDT" id="soDT">
+            </div>
+            <div class="form-group">
+                <label for="nganh">Ngành dạy</label>
+                <input class="form-control" name="nganh" id="nganh">
+            </div>
+            <div class="form-group">
+                <label>Upload ảnh</label>
+                <br/>
+                <input type="file" name="image" id="image">
+            </div>
+            <div class="form-group">
+                <label for="slug">Slug</label>
+                <input class="form-control" name="slug" id="slug">
+            </div>
+            <button type="submit" class="btn btn-primary">Thêm kết quả</button>
+        </form>
+    </div>
+
+    <%- include('footer') -%>
+</body>
+</html>

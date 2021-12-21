@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+        
+    <%- include('header') -%>
+    <div class="results-wrap">
+        <h3 class="mb-5">Cập nhập kết quả</h3>
+        <form method="POST" action="/<%= data._id %>?_method=PUT" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="tenTruong">Tên trường</label>
+              <input value="<%= data.tenTruong %>" class="form-control" name="tenTruong" id="maSV">
+            </div>
+            <div class="form-group">
+                <label for="diemDanhGia">Điểm đánh giá</label>
+                <input value="<%= data.diemDanhGia %>" class="form-control" name="diemDanhGia" id="maMH">
+            </div>
+            <div class="form-group">
+                <label for="topTruong">Top xếp hạng</label>
+                <input value="<%= data.topTruong %>" class="form-control" name="topTruong" id="diemThi">
+            </div>
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea class="form-control" name="content" id="content"><%= data.content %></textarea>
+              </div>
+              <div class="form-group">
+                <label for="soLuongSV">Số lượng SV</label>
+                <input value="<%= data.soLuongSV %>" class="form-control" name="soLuongSV" id="diemThi">
+            </div>
+              <div class="form-group">
+                  <label for="desc">Mô tả</label>
+                  <textarea class="form-control" name="desc" id="desc"><%= data.desc %></textarea>
+              </div>
+              <div class="form-group">
+                  <label for="diaChi">Địa chỉ</label>
+                  <input  value="<%= data.diaChi %>"  class="form-control" name="diaChi" id="diaChi">
+              </div>
+              <div class="form-group">
+                  <label for="soDT">Số điện thoại</label>
+                  <input  value="<%= data.soDT %>"  class="form-control" name="soDT" id="soDT">
+              </div>
+            <div class="form-group">
+                <label for="nganh">Ngành dạy</label>
+                <input value="<%= data.nganh %>" class="form-control" name="nganh" id="diemThi">
+            </div>
+            <div class="form-group">
+                <label for="slug">Slug</label>
+                <input value="<%= data.slug %>" class="form-control" name="slug" id="slug">
+            </div>
+            <div class="form-group">
+                <label>Image</label>
+                <input type="file" class="form-control" name="image" id="diemThi">
+            </div>
+            <button type="submit" class="btn btn-primary">Lưu lại</button>
+        </form>
+    </div>
+
+    <%- include('footer') -%>
+</body>
+</html>

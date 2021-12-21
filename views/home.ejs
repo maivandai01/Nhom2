@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <%- include('header') -%>
+
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col lg-6 mt-5">
+          <img class="banner-image" src="https://reviewedu.net/wp-content/uploads/2021/05/banner1ss.png" alt="">
+          <div class="banner-title">
+            <h6>Reviewedu.net</h6>
+            <h1>Review các trường Đại Học</h1>
+            <p>Nơi tổng hợp các đánh giá khách quan, đa chiều về chất lượng giảng dạy, cơ sở vật chất, môi trường học tập… tại các đơn vị đào tạo. Review điểm chuẩn, học phí, cơ sở vật chất, môi trường và còn nhiều hơn thế nữa</p>
+          </div>
+        </div>
+        <div class="col lg-6 mt-5">
+            <div class="baner-search-info">
+              <h2>
+                Xem review để lựa chọn
+                <br>
+                Ngôi trường tốt nhất
+                <br>
+                cho bạn
+              </h2>
+              <div class="dropdown">
+                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Hệ đào tạo
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Cao đẳng</a>
+                  <a class="dropdown-item" href="#">Đại học</a>
+                  <a class="dropdown-item" href="#">Trung học</a>
+                </div>
+              </div>
+                <div class="dropdown">
+                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Khối ngành
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">An ninh</a>
+                  <a class="dropdown-item" href="#">Quốc phòng</a>
+                  <a class="dropdown-item" href="#">Báo chi và thông tin</a>
+                  <a class="dropdown-item" href="#">Dịch vụ vận tải</a>
+                  <a class="dropdown-item" href="#">Dịch vụ xã hội</a>
+                  <a class="dropdown-item" href="#">Du lịch</a>
+                  <a class="dropdown-item" href="#">Khách sản</a>
+                  <a class="dropdown-item" href="#">Thể thao và dịch vụ cá nhân</a>
+                  <a class="dropdown-item" href="#">Khoa học sự sống</a>
+                  <a class="dropdown-item" href="#">Kiến trúc và xây dựng</a>
+                  <a class="dropdown-item" href="#">Kinh doanh và quản lý</a>
+                  <a class="dropdown-item" href="#">Nghệ thuật</a>
+                  <a class="dropdown-item" href="#">Kỹ thuật</a>
+                  <a class="dropdown-item" href="#">Sức khỏe</a>
+                  <a class="dropdown-item" href="#">Thú y</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Tỉnh/thành phố
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">An Giang</a>
+                  <a class="dropdown-item" href="#">Bắc Giang</a>
+                  <a class="dropdown-item" href="#">Bắc Gạn</a>
+                  <a class="dropdown-item" href="#">Cà Mau</a>
+                  <a class="dropdown-item" href="#">Gia Lai</a>
+                  <a class="dropdown-item" href="#">Đà Nẵng</a>
+                  <a class="dropdown-item" href="#">Quảng Nam</a>
+                  <a class="dropdown-item" href="#">Quảng Ngãi</a>
+                  <a class="dropdown-item" href="#">Nghệ Tĩnh</a>
+                  <a class="dropdown-item" href="#">Nghệ An</a>
+                  <a class="dropdown-item" href="#">Hà Nội</a>
+                </div>
+                </div>
+              </div>
+
+              <button class="banner-submit" type="submit">Tra cứu thông tin</button>
+            </div>
+        </div>
+      </div>
+   
+      <div class="container">
+        <div class="row container-card">
+          <h2 class="container-card-title">
+            <i class="fas fa-school"></i>
+            Top trường hiện nay
+          </h2>
+
+          <form method="GET" class="form-inline search-form" action="/search">
+            <div class="form-group mb-2">
+              <input type="text" class="form-control" id="search" name="title">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">tìm kiếm</button>
+          </form>
+          <br>
+          <div class="row">
+            <% data.forEach(item => { %>
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-7">
+                        <div class="card-image">
+                          <a href="/<%= item.slug %>" class="link-details">
+                            <img src="images/<%= item.image %>" alt="">
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-sm-5 reset-pd-col-left">
+                        <div class="card-content">
+                          <a href="/<%= item.slug %>" class="link-details">
+                            <h5 class="card-title"><%= item.tenTruong %></h5>
+                          </a>
+                          <div class="card-rating">
+                            <button type="button" class="btn btn-success rating-number"><%= item.diemDanhGia %></button>
+                            <div class="rating-text">
+                              <h3>Tốt</h3>
+                              <span>Top <%= item.topTruong %></span>
+                            </div>
+                          </div>
+                          <div class="rating-student">
+                            <h4><%= item.soLuongSV %> sinh vien</h4>
+                          </div>
+                          <div class="teaching-industry">
+                            <i class="fas fa-graduation-cap"></i>
+                            <p><%= item.nganh %></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer-edit">
+                    <a href="/<%= item._id %>/edit" class="btn btn-link">Sửa</a>
+                    <a href="" class="btn btn-link" data-toggle="modal" data-id="<%= item._id %>" data-target="#delete-result">Xóa</a>
+                  </div>
+                </div>
+              </div>
+            <% }) %>
+          </div>
+         </div>
+      </div>
+      <div class="container">
+        <div class="banner-slide">
+          <img src="https://reviewedu.net/wp-content/uploads/2021/05/banners-1400x323.png" alt="">
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="banner-inner-image">
+              <img src="https://reviewedu.net/wp-content/uploads/2021/05/banner3s-1400x609.png" alt="">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="banner-inner-image">
+              <img src="https://reviewedu.net/wp-content/uploads/2021/05/banner2s-1400x609.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <h2 class="container-card-title admissions-title">
+          <i class="fas fa-school"></i>
+          Tuyển sinh Đại học - Cao đẳng
+        </h2>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="admissions-item">
+              <div class="card" style="width: 100%;">
+                <img class="admissions-item-image" src="https://reviewedu.net/wp-content/uploads/2021/12/dh-y-te-cong-cong-534x400.jpg" alt="Card image cap">
+                <div class="card-body admissions-item-content">
+                  <h5 class="card-title admissions-item-title">Điểm chuẩn Trường Đại học Y Tế Công Cộng (HUPH) năm 2021 mới nhất.</h5>
+                  <span>7 Tháng Mười Một, 2021</span>
+                  <div class="is-divier"></div>
+                  <p class="card-text">Bài viết dưới đây sẽ cung cấp cho bạn đọc về thông tin điểm chuẩn Đại học Y Tế Công Cộng giúp bạn chắc chắn hơn</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 admissions-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="admissions-item">
+                    <div class="card" style="width: 100%;">
+                      <img class="card-review-img admissions-item-image" src="https://reviewedu.net/wp-content/uploads/2021/12/dh-y-te-cong-cong-534x400.jpg" alt="Card image cap">
+                      <div class="card-body admissions-item-content">
+                        <h5 class="card-title admissions-item-title">Điểm chuẩn Trường Đại học Y Tế Công Cộng (HUPH) năm 2021 mới nhất.</h5>
+                        <span>7 Tháng Mười Một, 2021</span>
+                        <div class="is-divier"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="admissions-item">
+                    <div class="card" style="width: 100%;">
+                      <img class="card-review-img admissions-item-image" src="https://reviewedu.net/wp-content/uploads/2021/12/dh-y-te-cong-cong-534x400.jpg" alt="Card image cap">
+                      <div class="card-body admissions-item-content">
+                        <h5 class="card-title admissions-item-title">Điểm chuẩn Trường Đại học Y Tế Công Cộng (HUPH) năm 2021 mới nhất.</h5>
+                        <span>7 Tháng Mười Một, 2021</span>
+                        <div class="is-divier"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="admissions-item">
+                    <div class="card" style="width: 100%;">
+                      <img class="card-review-img admissions-item-image" src="https://reviewedu.net/wp-content/uploads/2021/12/photo-1-16191694433301016819759-557x400.jpg" alt="Card image cap">
+                      <div class="card-body admissions-item-content">
+                        <h5 class="card-title admissions-item-title">Điểm chuẩn Trường Đại Học Đông Á năm 2021 mới nhất.</h5>
+                        <span>7 Tháng Mười Một, 2021</span>
+                        <div class="is-divier"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="admissions-item">
+                    <div class="card" style="width: 100%;">
+                      <img class="card-review-img admissions-item-image" src="https://reviewedu.net/wp-content/uploads/2021/12/unnamed-4.jpg" alt="Card image cap">
+                      <div class="card-body admissions-item-content">
+                        <h5 class="card-title admissions-item-title">Điểm chuẩn Trường Đại học Y Tế Công Cộng (HUPH) năm 2021 mới nhất.</h5>
+                        <span>7 Tháng Mười Một, 2021</span>
+                        <div class="is-divier"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- Confirm delete school -->
+    <div id="delete-result" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Xóa trường?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Bạn có muốn xóa trường này</p>
+          </div>
+          <div class="modal-footer">
+            <button id="btn-delete-result" type="button" class="btn btn-danger">Xóa</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy bỏ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <%- include('footer') -%>
+
+    
+    <!-- Delete hidden form -->
+    <form id="delete-result-form" method="POST"></form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          var schoolIds
+          var deleteForm = document.getElementById('delete-result-form')
+          var btnDeleteResult = document.getElementById('btn-delete-result')
+
+          $('#delete-result').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) 
+            schoolIds = button.data('id')
+          })
+
+          btnDeleteResult.addEventListener('click', () => {
+            deleteForm.action = '/' + schoolIds + '?_method=DELETE'
+            deleteForm.submit()
+          })
+          
+        })
+    </script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
